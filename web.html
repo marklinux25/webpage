@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Web Page</title>
+
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+#bgVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.sidebar h3 {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 5px;
+}
+
+.sidebar p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.image img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.image img:hover {
+    transform: scale(1.05);
+}
+
+.thankyou p {
+    font-size: 16px;
+    opacity: 0.9;
+    color: #a0d8f1; 
+}
+</style>
+</head>
+
+<body>
+
+<video id="bgVideo" autoplay loop muted>
+    <source src="sulasok.mp4" type="video/mp4">
+</video>
+
+<div class="sidebar">
+    <h3>ABOUT ME</h3>
+    <p>Hello! I am Marc Christian Escobal, someone who enjoys peace and quiet, and I love spending time in nature.</p>
+
+    <h3>MY BIRTHDAY</h3>
+    <p>JULY 25 2007 AND I AM 18 YEARS OLD NOW.</p>
+
+    <h3>WHERE I'M FROM</h3>
+    <p>BULAWEN, PALAUIG, ZAMBALES.</p>
+
+    <h3>MY CONTACT NUMBER AND GMAIL</h3>
+    <p>0960090414 , MARCCHRISTIANESCOBAL25@GMAIL.COM</p>
+
+    <h3>WHERE I STUDY AND MY COURSE</h3>
+    <p>CURRENTLY, I AM STUDYING AT PRESIDENT RAMON MAGSAYSAY STATE UNIVERSITY, TAKING UP THE INFORMATION TECHNOLOGY.</p>
+
+    <h3>MY HOBBIES</h3>
+    <p>
+        I LOVE SPENDING TIME ALONE IN NATURE BECAUSE IT GIVES ME PEACE AND QUIET.
+        I ENJOY WALKING WHILE LISTENING TO MUSIC, AS IT HELPS ME RELAX AND CLEAR MY MIND.
+        GAMING IS ANOTHER HOBBY OF MINE; IT ALLOWS ME TO ESCAPE REALITY AND HAVE FUN.
+        WATCHING MOVIES IS SOMETHING I ENJOY TOO, AS IT LETS ME EXPERIENCE DIFFERENT STORIES AND EMOTIONS.
+        SLEEPING IS ALSO IMPORTANT TO ME, AS IT RECHARGES MY ENERGY FOR THE NEXT DAY.
+        EDITING VIDEO OR PHOTOS MAKES ME FEEL CREATIVE AND ALLOWS ME TO EXPRESS MYSELF ARTISTICALLY.
+        I ENJOY SILENCE BECAUSE IT HELPS ME UNDERSTAND MY THOUGHTS AND FEELINGS BETTER.
+        BEING ALONE DOESN'T MAKE ME LONELY, IT GIVE ME STRENGHT.
+        NATURE REMINDS ME THAT LIFE IS SIMPLE AND BEAUTIFUL.
+        I VALUE PEACE MORE THAN NOISE AND CHAOS.
+        I ENJOY SLOW MOMENTS WHERE I CAN BREATH DEEPLY.
+        I PREFER QUALITY TIME WITH MYSELF.
+        GAMING CHALLENGES MY THINKING AND REACTION SKILLS.
+        MOVIES TAKE ME TO DIFFERENT WORLDS AND IDEAS.
+        EDITING PHOTOS AND VIDEOS ALLOWS ME TO BE CREATIVE AND TELL STORIES IN MY OWN WAY.
+        I ENJOY TRYING NEW THINGS AND EMBRACING DIFFERENT EXPERIENCES.
+        BEING ALONE HELPS ME GROW AND LEARN ABOUT MYSELF.
+        NATURE INSPIRES ME TO APPRECIATE THE SMALL BEAUTIES IN LIFE.
+        I ENJOY THE CALMNESS THAT COMES WITH SILENCE.
+        PEACE IS WHAT I STRIVE FOR IN MY LIFE.
+        I CHOOSE SOLITUDE TO FIND CLARITY AND PURPOSE.
+    </p>
+</div>
+
+
+<div class="gallery" style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: 40px; padding-left: 20px; padding-right: 20px;">
+    
+
+    <div class="image" style="display: flex; flex-direction: column; gap: 15px;">
+        <img src="image1.jpg" onmouseover="playMusic('music1.mp3')" onmouseout="stopMusic()">
+        <img src="image2.jpg" onmouseover="playMusic('music2.mp3')" onmouseout="stopMusic()">
+        <img src="image3.jpg" onmouseover="playMusic('music3.mp3')" onmouseout="stopMusic()">
+    </div>
+
+
+    <div class="thankyou" style="display: flex; flex-direction: horizontal; align-items: horizontal; height: 100vh; flex-grow: 1; margin-left: 20px; margin-right: 20px;">
+        <p>THANK YOU FOR VISITING MY WEBPAGE!</p>
+    </div>
+</div>
+
+
+<audio id="musicplayer"></audio>
+
+<script>
+const player = document.getElementById("musicplayer");
+
+function playMusic(song) {
+    if (!player.src.includes(song)) {
+        player.src = song;
+    }
+    player.play();
+}
+
+
+function stopMusic() {
+    player.pause();
+    player.currentTime = 0;
+}
+</script>
+
+</body>
+</html>
